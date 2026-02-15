@@ -1,0 +1,12 @@
+--Product--
+docker build -t users-microservice:1.0 -f ./eShop.API/Dockerfile .
+docker tag users-microservice:1.0 seyhauong/eshop-users-microservice:v1.0
+docker push seyhauong/eshop-users-microservice:v1.0
+
+--User--
+docker build -t products-microservice:1.0 -f ./ProductsMicroService.API/Dockerfile .
+docker tag products-microservice:1.0 seyhauong/eshop-products-microservice:v1.0
+docker push seyhauong/eshop-products-microservice:v1.0
+
+docker-compose up
+docker-compose down
