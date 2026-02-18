@@ -8,5 +8,12 @@ docker build -t products-microservice:1.0 -f ./ProductsMicroService.API/Dockerfi
 docker tag products-microservice:1.0 seyhauong/eshop-products-microservice:v1.0
 docker push seyhauong/eshop-products-microservice:v1.0
 
+
+--Order--
+-mongodb--
+docker run --rm -p 27017:27017 --name mongodb-server mongo:latest
+
+docker run --rm -p 27017:27017 -v D:\Udemy\microservices\eshop-product-microservice\seed\mongdb-init:/docker-entrypoint-initdb.d --name mongodb-server mongo:latest
+
 docker-compose up
 docker-compose down
