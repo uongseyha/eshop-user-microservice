@@ -1,9 +1,9 @@
---Product--
+--User--
 docker build -t users-microservice:1.0 -f ./eShop.API/Dockerfile .
 docker tag users-microservice:1.0 seyhauong/eshop-users-microservice:v1.0
 docker push seyhauong/eshop-users-microservice:v1.0
 
---User--
+--Product--
 docker build -t products-microservice:1.0 -f ./ProductsMicroService.API/Dockerfile .
 docker tag products-microservice:1.0 seyhauong/eshop-products-microservice:v1.0
 docker push seyhauong/eshop-products-microservice:v1.0
@@ -17,3 +17,6 @@ docker run --rm -p 27017:27017 -v D:\Udemy\microservices\eshop-product-microserv
 
 docker-compose up
 docker-compose down
+
+
+  - ./DataAccessLayer/Seed/mongodb-init:/docker-entrypoint-initdb.d
